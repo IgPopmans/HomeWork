@@ -1,7 +1,7 @@
 package de.telran;
 
 public class Car {
-    private  String name;
+    private String name;
     private String color;
     private int price;
     private boolean isNew;
@@ -13,6 +13,10 @@ public class Car {
         this.price = price;
         this.isNew = isNew;
         this.horsePower = horsePower;
+    }
+
+    public  int getPrice(int price) {
+        return price + this.price;
     }
 
     public String getName() {
