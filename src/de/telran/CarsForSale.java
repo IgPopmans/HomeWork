@@ -14,7 +14,6 @@ public class CarsForSale {
 
         printCars(bestCars);
 
-
         System.out.println("================================");
 
 
@@ -33,9 +32,5 @@ public class CarsForSale {
         for (Car car : cars) {
             System.out.println("Car name : " + car.getName() + " , color = " + car.getColor() + " , price = " + car.getPrice() + " , status = " + car.isNew() + ", horsepower = " + car.getHorsePower());
         }
-    }
-
-    public static void carSwap(Car car, Car car2) {
-
     }
 }
