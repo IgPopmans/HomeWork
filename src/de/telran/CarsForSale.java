@@ -5,7 +5,6 @@ public class CarsForSale {
 
     public static void main(String[] args) {
 
-
         Car car1 = new Car("Mazda", "Black", 200); // clone constructor
         Car car2 = new Car(car1);
         Car car3 = new Car(car2);
@@ -15,7 +14,6 @@ public class CarsForSale {
         printCars(bestCars);
 
         System.out.println("================================");
-
 
         Car[] cars = new Car[5];
 
