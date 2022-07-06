@@ -7,6 +7,7 @@ public class Car {
     private boolean isNew;
     private int horsePower;
 
+
     public Car(String name, String color, int price, boolean isNew, int horsePower) {
         this.name = name;
         this.color = color;
@@ -15,48 +16,70 @@ public class Car {
         this.horsePower = horsePower;
     }
 
-    public  int getPrice(int price) {
-        return price + this.price;
+    public Car(String name, String color, int horsePower) {
+        this.name = name;
+        this.color = color;
+        this.horsePower = horsePower;
+    }
+
+    public Car(Car car) {
+        this.name = car.name;
+        this.color = car.color;
+        this.horsePower = car.horsePower;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public boolean isNew() {
         return isNew;
-    }
-
-    public void setNew(boolean aNew) {
-        isNew = aNew;
     }
 
     public int getHorsePower() {
         return horsePower;
     }
 
+    public void setName(String name) {
+        if (name.isEmpty()) {
+            this.name = "old car";
+        } else
+            this.name = name;
+    }
+
+    public void setColor(String color) {
+        if (color.isEmpty()) {
+            this.color = "some color";
+        } else
+            this.color = color;
+    }
+
+    public void setPrice(int price) {
+        if (price < 0) {
+            this.price = 20000;
+        } else
+            this.price = price;
+    }
+
+    public void setNew(boolean aNew) {
+        if (!aNew) {
+            isNew = false;
+        }
+    }
+
     public void setHorsePower(int horsePower) {
-        this.horsePower = horsePower;
+        if (horsePower < 0) {
+            this.horsePower = 100;
+        } else
+            this.horsePower = horsePower;
     }
 
     @Override
@@ -70,3 +93,4 @@ public class Car {
                 '}';
     }
 }
+

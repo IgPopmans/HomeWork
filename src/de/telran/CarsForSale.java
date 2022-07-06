@@ -1,8 +1,22 @@
 package de.telran;
 
+
 public class CarsForSale {
 
     public static void main(String[] args) {
+
+
+        Car car1 = new Car("Mazda", "Black", 200); // clone constructor
+        Car car2 = new Car(car1);
+        Car car3 = new Car(car2);
+
+        Car [] bestCars = {car1,car2,car3};
+
+        printCars(bestCars);
+
+
+        System.out.println("================================");
+
 
         Car[] cars = new Car[5];
 
@@ -12,8 +26,16 @@ public class CarsForSale {
         cars[3] = new Car("Audi", "Pink", 7000, false, 100);
         cars[4] = new Car("Suzuki", "Grey", 20000, true, 145);
 
+        printCars(cars);
+    }
+
+    public static void printCars(Car[] cars) {
         for (Car car : cars) {
-            System.out.println(car);
+            System.out.println("Car name : " + car.getName() + " , color = " + car.getColor() + " , price = " + car.getPrice() + " , status = " + car.isNew() + ", horsepower = " + car.getHorsePower());
         }
+    }
+
+    public static void carSwap(Car car, Car car2) {
+
     }
 }
