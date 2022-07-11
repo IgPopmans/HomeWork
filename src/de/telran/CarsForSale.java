@@ -1,34 +1,29 @@
 package de.telran;
 
 
+import java.util.Arrays;
+
 public class CarsForSale {
 
     public static void main(String[] args) {
 
-        Car car1 = new Car("Mazda", "Black", 200); // clone constructor
-        Car car2 = new Car(car1);
-        Car car3 = new Car(car2);
+        Car bmw = new BMW("BMW-X1", "Black", 20000, true, 250, "Petrol", 12.4f);
+        Car audi = new Audi("Audi A6", "White", 23000, false, 200, 270, 4, 230);
+        Car opel = new Opel("Opel corsa", "Grey", 23000, false, 127, 4, 8.7, 2017);
 
-        Car [] bestCars = {car1,car2,car3};
 
-        printCars(bestCars);
-
-        System.out.println("================================");
-
-        Car[] cars = new Car[5];
-
-        cars[0] = new Car("BMW", "White", 15000, true, 230);
-        cars[1] = new Car("Toyota", "Black", 18000, true, 150);
-        cars[2] = new Car("Mercedes-Benz", "Green", 27000, false, 450);
-        cars[3] = new Car("Audi", "Pink", 7000, false, 100);
-        cars[4] = new Car("Suzuki", "Grey", 20000, true, 145);
-
-        printCars(cars);
+        Car[] bestCar = {bmw, audi, opel};
+        for (Car car : bestCar) {
+            System.out.println(car);
+        }
     }
+
 
     public static void printCars(Car[] cars) {
         for (Car car : cars) {
-            System.out.println("Car name : " + car.getName() + " , color = " + car.getColor() + " , price = " + car.getPrice() + " , status = " + car.isNew() + ", horsepower = " + car.getHorsePower());
+            System.out.println("Car name : " + car.getName() + " , color = " + car.getColor() + " , price = " + car.getPrice() + " , status = " + car.isNew() + ", horsepower = " + car.getHorsePower()) ;
+
         }
     }
 }
+

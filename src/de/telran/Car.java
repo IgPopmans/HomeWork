@@ -1,11 +1,21 @@
 package de.telran;
 
-public class Car {
+public abstract class Car {
+
+    private final static int DEFAULT_PRICE = 100;
+    private final static int DEFAULT_HORSE_POWER = 235;
+    private final static String DEFAULT_NAME = "FutureCar";
+    private final static String DEFAULT_COLOR = "White";
+
     private String name;
     private String color;
     private int price;
     private boolean isNew;
     private int horsePower;
+
+    public Car(){
+
+    }
 
 
     public Car(String name, String color, int price, boolean isNew, int horsePower) {
@@ -49,37 +59,25 @@ public class Car {
     }
 
     public void setName(String name) {
-        if (name.isEmpty()) {
-            this.name = "old car";
-        } else
-            this.name = name;
+        this.name = (name == null) ? DEFAULT_NAME : name;
     }
 
     public void setColor(String color) {
-        if (color.isEmpty()) {
-            this.color = "some color";
-        } else
-            this.color = color;
+        this.color = (color == null) ? DEFAULT_COLOR : color;
     }
 
     public void setPrice(int price) {
-        if (price < 0) {
-            this.price = 20000;
-        } else
-            this.price = price;
+        this.price = (price < 0) ? DEFAULT_PRICE : price;
     }
 
     public void setNew(boolean aNew) {
-        if (!aNew) {
-            isNew = false;
-        }
+        isNew = aNew;
     }
 
-    public void setHorsePower(int horsePower) {
-        if (horsePower < 0) {
-            this.horsePower = 100;
-        } else
-            this.horsePower = horsePower;
+    public void setHorsePower1(int horsePower) {
+        this.horsePower = (horsePower < 0) ? DEFAULT_HORSE_POWER : horsePower;
+
+
     }
 
     @Override
