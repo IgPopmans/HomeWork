@@ -1,6 +1,6 @@
 package de.telran;
 
-public abstract class Car {
+public class Car {
 
     private final static int DEFAULT_PRICE = 100;
     private final static int DEFAULT_HORSE_POWER = 235;
@@ -12,11 +12,6 @@ public abstract class Car {
     private int price;
     private boolean isNew;
     private int horsePower;
-
-    public Car(){
-
-    }
-
 
     public Car(String name, String color, int price, boolean isNew, int horsePower) {
         this.name = name;
@@ -36,6 +31,8 @@ public abstract class Car {
         this.name = car.name;
         this.color = car.color;
         this.horsePower = car.horsePower;
+        this.price = car.price;
+        this.isNew = car.isNew;
     }
 
     public String getName() {
@@ -74,7 +71,7 @@ public abstract class Car {
         isNew = aNew;
     }
 
-    public void setHorsePower1(int horsePower) {
+    public void setHorsePower(int horsePower) {
         this.horsePower = (horsePower < 0) ? DEFAULT_HORSE_POWER : horsePower;
 
 
@@ -89,6 +86,10 @@ public abstract class Car {
                 ", isNew=" + isNew +
                 ", horsePower=" + horsePower +
                 '}';
+    }
+
+    public void showInfo() {
+        System.out.println("This is the best car for sale : " + name);
     }
 }
 

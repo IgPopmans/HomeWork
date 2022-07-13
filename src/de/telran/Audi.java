@@ -45,4 +45,9 @@ public class Audi extends Car {
         System.out.println(getName() + " : Switched on");
     }
 
+    @Override
+    public void showInfo() {
+        System.out.println(getName()+ ": This car already sold out " );
+        super.showInfo();
+    }
 }

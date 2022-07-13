@@ -30,4 +30,10 @@ public class Opel extends Car {
                 ", dateOfProduction=" + dateOfProduction +
                 '}';
     }
+
+    @Override
+    public void showInfo() {
+        System.out.println(getName()+ ": This car is for sale ");
+        super.showInfo();
+    }
 }
