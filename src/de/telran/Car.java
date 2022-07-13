@@ -74,7 +74,6 @@ public class Car {
     public void setHorsePower(int horsePower) {
         this.horsePower = (horsePower < 0) ? DEFAULT_HORSE_POWER : horsePower;
 
-
     }
 
     @Override
